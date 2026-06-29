@@ -1,4 +1,5 @@
-import { Clock, Server, ShieldAlert, User, Users } from "lucide-react"
+import Link from "next/link"
+import { ArrowRight, ClipboardCheck, Clock, FileText, Server, ShieldAlert, Sparkles, User, Users } from "lucide-react"
 import { IncidentTabs } from "@/components/incident-tabs"
 import { SeverityBadge, StatusBadge } from "@/components/badges"
 import { primaryIncident, responders, serviceById } from "@/lib/data"
@@ -67,6 +68,43 @@ export default function IncidentPage() {
             <span className="font-medium text-destructive">Customer impact:</span>{" "}
             <span className="text-foreground/90">{inc.customerImpact}</span>
           </p>
+        </div>
+        <div className="mt-4 flex flex-col gap-3 rounded-xl border border-primary/20 bg-primary/5 p-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+              Recommended incident workflow
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Move from live response to AI analysis, postmortem generation, and recurrence-prevention actions.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            <Link
+              href="/ai-analysis"
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
+            >
+              <Sparkles className="size-4" />
+              View AI Analysis
+            </Link>
+
+            <Link
+              href="/postmortem"
+              className="inline-flex items-center justify-center gap-2 rounded-md border border-input bg-background px-3 py-2 text-sm font-medium shadow-sm hover:bg-accent hover:text-accent-foreground"
+            >
+              <FileText className="size-4" />
+              Generate Postmortem
+            </Link>
+
+            <Link
+              href="/actions"
+              className="inline-flex items-center justify-center gap-2 rounded-md border border-input bg-background px-3 py-2 text-sm font-medium shadow-sm hover:bg-accent hover:text-accent-foreground"
+            >
+              <ClipboardCheck className="size-4" />
+              Review Action Items
+              <ArrowRight className="size-4" />
+            </Link>
+          </div>
         </div>
       </div>
 
