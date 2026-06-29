@@ -1,7 +1,7 @@
 // ResolveOps AI — demo data model
 // Scenario: a SaaS company ("Northwind Cloud") experiencing a payment outage
-// caused by a database migration issue. This mirrors the relational schema
-// stored in Amazon Aurora PostgreSQL.
+// caused by a database migration issue. This mirrors the event-driven model
+// stored in Amazon DynamoDB.
 
 export type Severity = "SEV1" | "SEV2" | "SEV3" | "SEV4"
 export type IncidentStatus = "investigating" | "identified" | "mitigated" | "monitoring" | "resolved"
@@ -107,7 +107,7 @@ export const services: Service[] = [
     lastIncident: "Active now",
     openActions: 3,
     dependencies: [],
-    description: "Primary Aurora PostgreSQL cluster backing all core services.",
+    description: "Primary DynamoDB cluster backing all core services.",
   },
 ]
 
@@ -265,7 +265,7 @@ export const timeline: TimelineEvent[] = [
   {
     id: "t7",
     at: "14:24",
-    phase: "monitoring",
+    phase: "resolution",
     title: "Error rate dropping — monitoring",
     detail: "Payment error rate fell from 38% to 4% within 6 minutes of the mitigation.",
     actor: "Maya Chen",
@@ -571,7 +571,7 @@ export const postmortem = {
   ],
 }
 
-// Architecture: relational tables stored in Aurora PostgreSQL
+// Architecture: incident events stored in DynamoDB
 export const schemaTables = [
   { name: "organizations", purpose: "Tenant accounts and plan metadata", columns: 7 },
   { name: "users", purpose: "Responders, owners, and commanders", columns: 9 },

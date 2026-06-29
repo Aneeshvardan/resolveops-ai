@@ -170,7 +170,7 @@ export function PostmortemPanel() {
       {!generated && (
         <p className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
           <CheckCircle2 className="size-3.5 text-[color:var(--chart-2)]" />
-          Structured sections are populated from Aurora PostgreSQL. Generate a draft to add the AI executive summary.
+          Structured sections are populated from DynamoDB. Generate a draft to add the AI executive summary.
         </p>
       )}
     </div>

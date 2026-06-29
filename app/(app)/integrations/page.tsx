@@ -111,7 +111,7 @@ export default function IntegrationsPage() {
           <p className="mt-3 text-xs text-muted-foreground">
             Authenticated with a per-organization API key stored in Vercel environment variables. Events persist to the
             <code className="mx-1 rounded bg-muted px-1 py-0.5 font-mono">external_events</code>
-            table in Aurora PostgreSQL.
+            table resolveops-ai-events in Amazon DynamoDB.
           </p>
         </div>
 

@@ -38,7 +38,7 @@ const howItWorks = [
   {
     step: "02",
     title: "Structure",
-    desc: "Data is normalized into a relational Aurora PostgreSQL model: incidents, timelines, services, responders.",
+    desc: "Data is normalized into an Amazon DynamoDB event model: incidents, timeline events, services, responders.",
     icon: Database,
   },
   {
@@ -223,7 +223,7 @@ export default function LandingPage() {
         <Section
           eyebrow="The solution"
           title="One incident command center, backed by a real data model."
-          description="ResolveOps AI brings every signal into a single incident record stored in a relational Aurora PostgreSQL model — then generates summaries, likely root causes, recommended actions, and structured postmortems."
+          description="ResolveOps AI brings every signal into a single incident event model stored in Amazon DynamoDB — then generates summaries, likely root causes, recommended actions, and structured postmortems."
         >
           <div className="mt-10 grid gap-4 lg:grid-cols-2">
             <div className="rounded-xl border border-border bg-background p-6">

@@ -6,7 +6,7 @@ import { Database, Workflow, Brain, FileText, Table2, ArrowRight } from "lucide-
 
 export const metadata: Metadata = {
   title: "Architecture — ResolveOps AI",
-  description: "System architecture and the relational data model backing ResolveOps AI.",
+  description: "System architecture and the DynamoDB event model backing ResolveOps AI.",
 }
 
 const pipeline = [
@@ -18,7 +18,7 @@ const pipeline = [
   {
     icon: Database,
     title: "Correlate",
-    detail: "Join external events to services and incidents in Aurora PostgreSQL using time and dependency context.",
+    detail: "Store and query incident signals in Amazon DynamoDB using incidentId and eventTimestamp keys.",
   },
   {
     icon: Brain,
@@ -38,7 +38,7 @@ export default function ArchitecturePage() {
       <header className="flex flex-col gap-1">
         <h1 className="text-2xl font-semibold tracking-tight text-foreground text-balance">Architecture</h1>
         <p className="text-sm text-muted-foreground text-pretty">
-          How ResolveOps AI ingests operational signals and models them as connected, relational data.
+          How ResolveOps AI ingests operational signals and stores them as queryable incident events.
         </p>
       </header>
 
@@ -75,10 +75,10 @@ export default function ArchitecturePage() {
           <CardHeader>
             <div className="flex items-center gap-2">
               <Database className="size-4 text-primary" aria-hidden />
-              <CardTitle className="text-base text-foreground">Relational data model</CardTitle>
+              <CardTitle className="text-base text-foreground">DynamoDB event model</CardTitle>
             </div>
             <CardDescription>
-              Core tables stored in Amazon Aurora PostgreSQL. Incidents connect services, timelines, responders,
+              Core incident and event records stored in Amazon DynamoDB table resolveops-ai-events. Incidents connect services, timelines, responders,
               root causes, postmortems, and action items.
             </CardDescription>
           </CardHeader>
@@ -147,7 +147,7 @@ export default function ArchitecturePage() {
         <CardContent className="flex flex-wrap gap-2">
           {[
             "Next.js App Router",
-            "Amazon Aurora PostgreSQL",
+            "Amazon DynamoDB",
             "Server Components",
             "AI root-cause analysis",
             "Event correlation engine",

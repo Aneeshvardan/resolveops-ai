@@ -81,7 +81,7 @@ function SidebarFooter() {
         {org.name}
       </div>
       <p className="mt-1 text-[11px] text-sidebar-foreground/55">
-        {org.plan} · {org.region} · Aurora PostgreSQL
+        {org.plan} · {org.region} · DynamoDB
       </p>
     </div>
   )

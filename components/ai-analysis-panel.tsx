@@ -85,7 +85,7 @@ export function AiAnalysisPanel() {
           <h3 className="font-semibold">Evidence used</h3>
         </div>
         <p className="mt-1 text-xs text-muted-foreground">
-          The analysis draws on structured incident data stored in Amazon Aurora PostgreSQL.
+          The analysis draws on structured incident data stored in Amazon DynamoDB.
         </p>
         <div className="mt-4 grid gap-2 sm:grid-cols-2">
           {aiAnalysis.evidence.map((e) => (
