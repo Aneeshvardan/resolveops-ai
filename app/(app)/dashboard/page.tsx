@@ -45,24 +45,52 @@ export default function DashboardPage() {
   return (
     <>
       <PageHeader
-        title="Reliability Dashboard"
-        description="Northwind Cloud · Live operational view across all services and incidents"
-      >
-        <Button variant="outline" size="sm" asChild>
-          <Link href="/integrations">
-            <Plus className="size-4" />
-            Import incident data
-          </Link>
-        </Button>
-        <Button size="sm" asChild>
-          <Link href="/incident">
-            View active SEV1
-            <ArrowRight className="size-4" />
-          </Link>
-        </Button>
-      </PageHeader>
+  title="Reliability Dashboard"
+  description="Northwind Cloud · Live operational view across all services and incidents"
+>
+  <div className="flex flex-wrap items-center gap-2">
+    <Link
+      href="/integrations"
+      className="inline-flex items-center justify-center gap-2 rounded-md border border-input bg-background px-3 py-2 text-sm font-medium shadow-sm hover:bg-accent hover:text-accent-foreground"
+    >
+      <Plus className="size-4" />
+      Import incident data
+    </Link>
+
+    <Link
+      href="/incident"
+      className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
+    >
+      View active SEV1
+      <ArrowRight className="size-4" />
+    </Link>
+  </div>
+</PageHeader>
 
       <div className="space-y-6 p-5 sm:p-8">
+      <div className="rounded-xl border border-primary/20 bg-primary/5 p-5">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+                Demo scenario
+              </p>
+              <h2 className="mt-1 text-lg font-semibold">
+                SEV1 payment outage caused by a database migration
+              </h2>
+              <p className="mt-1 max-w-3xl text-sm text-muted-foreground">
+                Follow the workflow from external alerts and customer impact signals into the incident command center,
+                AI root-cause analysis, generated postmortem, and prevention action items.
+              </p>
+            </div>
+            <Link
+  href="/incident"
+  className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
+>
+  Open incident flow
+  <ArrowRight className="size-4" />
+</Link>
+          </div>
+        </div>
         {/* Metric cards */}
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-5">
           <MetricCard label="Active Incidents" value={dashboardMetrics.activeIncidents} icon={AlertOctagon} hint="1 critical" accent />

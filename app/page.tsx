@@ -87,12 +87,13 @@ function MarketingNav() {
           <a href="#sources" className="transition-colors hover:text-foreground">Data sources</a>
           <a href="#teams" className="transition-colors hover:text-foreground">For teams</a>
         </nav>
-        <Button asChild size="sm">
-          <Link href="/dashboard">
-            Open Demo Workspace
-            <ArrowRight className="size-4" />
-          </Link>
-        </Button>
+        <Link
+  href="/dashboard"
+  className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
+>
+  Open Demo Workspace
+  <ArrowRight className="size-4" />
+</Link>
       </div>
     </header>
   )
@@ -126,15 +127,20 @@ function Hero() {
             reliability actions.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button asChild size="lg">
-              <Link href="/dashboard">
-                Open Demo Workspace
-                <ArrowRight className="size-4" />
-              </Link>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <Link href="/incident">View a live incident</Link>
-            </Button>
+          <Link
+  href="/dashboard"
+  className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
+>
+  Open Demo Workspace
+  <ArrowRight className="size-4" />
+</Link>
+
+<Link
+  href="/incident"
+  className="inline-flex items-center justify-center rounded-md border border-input bg-background px-5 py-3 text-sm font-medium shadow-sm hover:bg-accent hover:text-accent-foreground"
+>
+  View a live incident
+</Link>
           </div>
           <p className="mt-4 text-xs text-muted-foreground">
             Live demo · Payment outage caused by a database migration
@@ -340,12 +346,13 @@ export default function LandingPage() {
             postmortem.
           </p>
           <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button asChild size="lg" variant="secondary">
-              <Link href="/dashboard">
-                Open Demo Workspace
-                <ArrowRight className="size-4" />
-              </Link>
-            </Button>
+  <Link
+    href="/dashboard"
+    className="inline-flex items-center justify-center gap-2 rounded-md bg-secondary px-5 py-3 text-sm font-medium text-secondary-foreground shadow-sm hover:bg-secondary/80"
+  >
+    Open Demo Workspace
+    <ArrowRight className="size-4" />
+  </Link>
           </div>
         </div>
       </section>
