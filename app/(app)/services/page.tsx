@@ -25,7 +25,7 @@ export default function ServicesPage() {
             <CardHeader className="gap-2">
               <div className="flex items-start justify-between gap-3">
                 <CardTitle className="text-base text-foreground">{svc.name}</CardTitle>
-                <HealthBadge status={svc.health} />
+                <HealthBadge health={svc.health} />
               </div>
               <p className="text-sm text-muted-foreground text-pretty">{svc.description}</p>
             </CardHeader>
@@ -56,7 +56,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="flex flex-col gap-0.5">
                   <span className="text-xs text-muted-foreground">Risk</span>
-                  <RiskBadge level={svc.risk} />
+                  <RiskBadge risk={svc.risk} />
                 </div>
               </div>
 
